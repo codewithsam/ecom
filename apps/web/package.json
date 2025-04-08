@@ -13,6 +13,9 @@
   "dependencies": {
     "@repo/header": "workspace:*",
     "@repo/leftsidebar": "workspace:*",
+    "@repo/subheader": "workspace:*",
+    "@repo/store": "workspace:*",
+    "@repo/product-list-widget": "workspace:*",
     "@repo/ui": "workspace:*",
     "next": "^15.2.1",
     "react": "^19.1.0",

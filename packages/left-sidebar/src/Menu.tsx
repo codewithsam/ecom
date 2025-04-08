@@ -6,6 +6,9 @@ const MenuParent = styled.div`
   width: 100px;
   height: 100vh;
   background-color: #e2e4e7;
+  position: fixed;
+  left: 0;
+  top: 45px;
 `;
 
 const MenuWrapper = styled.ul`
@@ -26,31 +29,22 @@ const MenuWrapper = styled.ul`
   }
 `;
 
-export const Menu = () => {
+const Menu = ({ config, Link }: { config: any; Link: any }) => {
   return (
     <>
       <MenuParent>
         <MenuWrapper>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
-          <li>
-            <a href="#">Item 1</a>
-          </li>
+          {config.items.map(({ title, path }: { title: string; path: string }) => {
+            return (
+              <li key={path}>
+                <Link href={path}>{title}</Link>
+              </li>
+            );
+          })}
         </MenuWrapper>
       </MenuParent>
     </>
   );
 };
+
+export default Menu;

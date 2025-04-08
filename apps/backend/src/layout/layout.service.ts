@@ -5,6 +5,7 @@ export class LayoutService {
   findAll() {
     return {
       header: {
+        weight: 0,
         brand: {
           type: 'full-logo',
           show: true,
@@ -45,7 +46,8 @@ export class LayoutService {
           ],
         },
       },
-      subHeader: {
+      subheader: {
+        weight: 1,
         buttons: [
           {
             title: 'Cafe',
@@ -81,7 +83,8 @@ export class LayoutService {
           },
         ],
       },
-      leftNav: {
+      menu: {
+        weight: 2,
         type: 'icon-left-button',
         items: [
           {

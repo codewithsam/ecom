@@ -11,7 +11,6 @@ import {
 } from "@repo/ui/components/ui/sheet";
 import { Button } from "@repo/ui/components/ui/button";
 import { useSheetStore, useCartStore } from "@repo/store/store";
-import { Badge } from "@repo/ui/components/ui/badge";
 import Image from "next/image";
 
 export default function SideSheet() {
@@ -21,8 +20,6 @@ export default function SideSheet() {
 
   return (
     <>
-      {console.log("asdsa")}
-      {console.log(cartItems)}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent>
           <SheetHeader>

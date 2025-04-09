@@ -11,12 +11,14 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@module-federation/nextjs-mf": "^8.8.23",
     "@repo/header": "workspace:*",
     "@repo/leftsidebar": "workspace:*",
-    "@repo/subheader": "workspace:*",
-    "@repo/store": "workspace:*",
     "@repo/product-list-widget": "workspace:*",
+    "@repo/store": "workspace:*",
+    "@repo/subheader": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@repo/vue-hero": "workspace:*",
     "next": "^15.2.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

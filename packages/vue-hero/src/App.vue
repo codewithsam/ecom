@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <h1 style="font-size: 40px">
     {{ message }}
-  </div>
+  </h1>
 </template>
 
 <script>

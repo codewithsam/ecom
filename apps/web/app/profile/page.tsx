@@ -2,11 +2,10 @@
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import useModuleLoader from "../scripts/useModuleLoader";
-// import ModuleLoader from "../scripts/useModuleLoader";
 
 export default function Home() {
   const hostRef = useRef(null);
-  const { module } = useModuleLoader({
+  useModuleLoader({
     url: "http://localhost:8082/remoteEntry.js",
     scope: "helloVue",
     module: "./HelloVueApp",

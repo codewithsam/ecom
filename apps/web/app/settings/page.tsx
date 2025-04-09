@@ -1,5 +1,21 @@
-import styles from "./page.module.css";
+"use client";
+
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import useModuleLoader from "../scripts/useModuleLoader";
 
 export default function Home() {
-  return <>settings pages</>;
+  const hostRef = useRef(null);
+  useModuleLoader({
+    url: "http://localhost:8080/remoteEntry.js",
+    scope: "solidhero",
+    module: "./SolidHero",
+    ref: hostRef,
+  });
+
+  return (
+    <>
+      <h1>This is a component created in solid js and loaded using module federation in our host app</h1>
+      <div ref={hostRef} id="solid-host"></div>
+    </>
+  );
 }

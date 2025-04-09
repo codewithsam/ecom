@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const useModuleLoader = (props: any) => {
-  const [module, setModule] = useState({});
   const loadComponent = async (scope: any, module: any) => {
     const container = window[scope];
     // @ts-expect-error
@@ -39,7 +38,7 @@ const useModuleLoader = (props: any) => {
       console.log(`Dynamic Script Removed: ${props.url}`);
       document.head.removeChild(element);
     };
-  }, [props.module, props.scope, props.url]);
+  }, [props.module, props.scope, props.url, loadComponent]);
   return {
     module,
   };

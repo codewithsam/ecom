@@ -19,10 +19,12 @@ export default async function RootLayout({
   const elements = await response.json();
 
   const components = Object.keys(elements).map((item) => {
-    return {
-      component: modulesList[item],
-      config: elements[item],
-    };
+    if (modulesList[item])
+      return {
+        component: modulesList[item],
+        config: elements[item],
+      };
+    return null;
   });
 
   return (
@@ -30,6 +32,7 @@ export default async function RootLayout({
       <body style={{ marginLeft: "100px", marginTop: "40px" }}>
         <SideSheet />
         {components.map((item, idx) => {
+          if (!item) return <></>;
           const { component: Component, config } = item;
           return <Component key={idx} config={config} Link={Link} />;
         })}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import useModuleLoader from "../scripts/useModuleLoader";
 
 export default function Home() {

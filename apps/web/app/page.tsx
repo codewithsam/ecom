@@ -19,8 +19,6 @@ export default function Home() {
 
   return (
     <>
-      {console.log("asdsa")}
-      {console.log(cartItems)}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent>
           <SheetHeader>

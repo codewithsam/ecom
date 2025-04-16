@@ -3,7 +3,7 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import useModuleLoader from "../scripts/useModuleLoader";
 
-export default function Home() {
+export default function Profile() {
   const hostRef = useRef(null);
   useModuleLoader({
     url: "http://localhost:8082/remoteEntry.js",

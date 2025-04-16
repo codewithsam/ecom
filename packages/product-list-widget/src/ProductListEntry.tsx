@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-//@ts-expect-error
+// @ts-ignore
 const ProductList = lazy(() => import("./Product-List"));
 
 export default function ProductListEntry({ config, Link, query }: { config: any; Link: any; query: string }) {

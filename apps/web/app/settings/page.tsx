@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import useModuleLoader from "../scripts/useModuleLoader";
 
-export default function Home() {
+export default function Settings() {
   const hostRef = useRef(null);
   useModuleLoader({
     url: "http://localhost:8080/remoteEntry.js",

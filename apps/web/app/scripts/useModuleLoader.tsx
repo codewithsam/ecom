@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 
 const useModuleLoader = (props: any) => {
-  const loadComponent = async (scope: any, module: any) => {
-    const container = window[scope];
-    // @ts-expect-error
-    const factory = await window[scope].get(module);
-    const Module = factory();
-    if (Module && Module.mount) {
-      Module.mount(props.ref.current);
-    }
-    return Module;
-  };
-
   useEffect(() => {
+    const loadComponent = async (scope: any, module: any) => {
+      const container = window[scope];
+      // @ts-expect-error
+      const factory = await window[scope].get(module);
+      const Module = factory();
+      if (Module && Module.mount) {
+        Module.mount(props.ref.current);
+      }
+      return Module;
+    };
     if (!props.url) {
       return;
     }
@@ -38,7 +37,7 @@ const useModuleLoader = (props: any) => {
       console.log(`Dynamic Script Removed: ${props.url}`);
       document.head.removeChild(element);
     };
-  }, [props.module, props.scope, props.url, loadComponent]);
+  }, [props.module, props.scope, props.url, props.ref]);
   return {
     module,
   };

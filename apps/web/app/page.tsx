@@ -27,7 +27,6 @@ export default function Home() {
               Items in your cart. Please click process to payment button to complete the order
             </SheetDescription>
           </SheetHeader>
-          <div>asdmkslakdm</div>
           <SheetFooter>
             <SheetClose asChild>
               <Button type="submit">Proceed to payment</Button>
@@ -35,6 +34,7 @@ export default function Home() {
           </SheetFooter>
         </SheetContent>
       </Sheet>
+      <h1 className="ui-text-center ui-mt-[150px]">Choose product from tabs above</h1>
     </>
   );
 }

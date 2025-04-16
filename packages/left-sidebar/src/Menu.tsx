@@ -1,48 +1,20 @@
-"use client";
-
-import { styled } from "styled-components";
-
-const MenuParent = styled.div`
-  width: 100px;
-  height: 100vh;
-  background-color: #e2e4e7;
-  position: fixed;
-  left: 0;
-  top: 45px;
-`;
-
-const MenuWrapper = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  a {
-    width: 100%;
-    display: block;
-    height: 100%;
-    padding: 10px 15px;
-    border-bottom: 2px solid #ccc;
-  }
-  a:hover {
-    font-weight: bold;
-    color: blue;
-  }
-`;
-
 const Menu = ({ config, Link }: { config: any; Link: any }) => {
   return (
     <>
-      <MenuParent>
-        <MenuWrapper>
+      <div className="ui-w-[100px] ui-h-screen ui-bg-[#e2e4e7] ui-fixed ui-left-0 ui-top-[45px]">
+        <div>
           {config.items.map(({ title, path }: { title: string; path: string }) => {
             return (
-              <li key={path}>
+              <li
+                className="[&_a:hover]:ui-text-[blue] ui-flex ui-flex-col ui-m-0 ui-p-0 [&_a]:ui-w-[100px] [&_a]:ui-block [&_a]:ui-h-[100%] [&_a]:ui-py-[10px] [&_a]:ui-px-[15px] [&_a]:ui-border-b-[2px] [&_a]:ui-border-solid [&_a]:ui-border-[#ccc]"
+                key={path}
+              >
                 <Link href={path}>{title}</Link>
               </li>
             );
           })}
-        </MenuWrapper>
-      </MenuParent>
+        </div>
+      </div>
     </>
   );
 };

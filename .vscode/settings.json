@@ -4,5 +4,14 @@
       "mode": "auto"
     }
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss",
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html"
+  }
 }

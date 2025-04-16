@@ -9,6 +9,8 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "../../packages/ui/src/**/*.{ts,tsx}",
+    "../../packages/**/*.{ts,tsx}",
+    "!./node_modules"
   ],
   prefix: "ui-",
   theme: {

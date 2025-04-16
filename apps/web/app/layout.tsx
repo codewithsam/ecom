@@ -10,9 +10,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const modulesList = {
-    header: dynamic(() => import("@repo/header/header")),
+    header: dynamic(() => import("@repo/header/header"), {
+      ssr: true,
+    }),
     subheader: dynamic(() => import("@repo/subheader/Subheader")),
-    menu: dynamic(() => import("@repo/leftsidebar/Menu")),
+    menu: dynamic(() => import("@repo/leftsidebar/Menu"), {
+      ssr: true,
+    }),
   } as any;
 
   const response = await fetch("http://localhost:3001/v1/layout");
@@ -29,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body style={{ marginLeft: "100px", marginTop: "40px" }}>
+      <body className="ui-ml-[100px] ui-mt-[40px]">
         <SideSheet />
         {components.map((item, idx) => {
           if (!item) return <></>;

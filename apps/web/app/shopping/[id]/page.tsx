@@ -1,13 +1,13 @@
-import styles from "./page.module.css";
 import Link from "next/link";
 
-import ProductList from "@repo/product-list-widget/Product-List";
+import ProductListEntry from "@repo/product-list-widget/ProductListEntry";
 
-export default function Shopping({ params }: { params: { id: string } }) {
+export default async function Shopping({ params }: { params: { id: string } }) {
+  const { id } = await params;
   return (
     <>
       <div style={{ padding: "10px" }}>
-        <ProductList config={{}} Link={Link} query={params.id} />
+        <ProductListEntry config={{}} Link={Link} query={id} />
       </div>
     </>
   );

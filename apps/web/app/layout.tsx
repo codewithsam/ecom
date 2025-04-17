@@ -19,7 +19,11 @@ export default async function RootLayout({
     }),
   } as any;
 
-  const response = await fetch("http://localhost:3001/v1/layout");
+  const response = await fetch("http://localhost:3001/v1/layout", {
+    next: {
+      revalidate: 10,
+    },
+  });
   const elements = await response.json();
 
   const components = Object.keys(elements).map((item) => {

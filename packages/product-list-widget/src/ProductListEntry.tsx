@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 // @ts-ignore
 const ProductList = lazy(() => import("./Product-List"));
@@ -8,7 +8,9 @@ export default function ProductListEntry({ config, Link, query }: { config: any;
     <>
       <h1>Products based on {query}</h1>
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        <ProductList config={config} Link={Link} query={query} />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <ProductList config={config} Link={Link} query={query} />
+        </Suspense>
       </div>
     </>
   );
